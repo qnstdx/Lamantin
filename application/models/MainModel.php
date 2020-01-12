@@ -9,7 +9,9 @@ class MainModel extends Model
     public static function WorkWithDb ()
     {  	
     	$db = new DB;
-
-    	$data = $db->column( "SELECT * FROM grappy.foo WHERE id = :id", ['id' => 1] );
+    	/**
+    	 *Запрос к базе
+    	*/
+    	$data = $db->row( "SELECT * FROM foo WHERE id = :id", ['id' => 1] );
 	}
 }
