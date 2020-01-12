@@ -2,6 +2,7 @@
 namespace application\components;
 
 use PDO;
+use PDOException;
 
 class DB
 {

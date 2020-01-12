@@ -1,6 +1,8 @@
 <?php
 namespace application\core; 
 
+use mysql_xdevapi\Exception;
+
 class Model
 {
 	public static function openAndWriteFileLogs ( $what_writing )
