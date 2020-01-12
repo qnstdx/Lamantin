@@ -1,0 +1,19 @@
+* {
+	font-family: 'Kulim Park', sans-serif;
+}
+
+h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 100px;
+	color: #9EA6D9;
+	width: 20%;
+}
+
+p {
+	font-size: 25px;
+}
+
+#grappy_logo {
+	float: right;
+	width: 30%;
+}
