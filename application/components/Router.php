@@ -35,11 +35,15 @@ class Router
 	{
 		$uri = $this->getURI();
 
-		foreach ( $this->routes as $uri_pattern => $path ) 
+		foreach ( $this->routes as $uri_pattern => $path )
 		{
 			// Сравниваем строку запроса ($uri) и данные в роутах ($uri_pattern)
-			if ( preg_match ( "~^$uri_pattern$~", $uri ) )
+
+            // Переменная для проверки на существования роута
+            $if_found = 0;
+			if ( preg_match ( "~$uri_pattern~", $uri ) )
 			{
+                $if_found++;
 				// Внутренний адрес с параметрами и обработаем их далее
 				$internal_route = preg_replace ( "~$uri_pattern~", $path, $uri );
 				
@@ -68,25 +72,26 @@ class Router
 				}
 
 				$controller_obj = new $controller_name;
-				
+
 				// Вызываем нужный метод и передаём нужные параметры				
 				$result = call_user_func_array ( array( $controller_obj, $action_name ), $parameters );
 				if ( $result != null )
 				{
 					break;
 				}
-			} else 
-			{
-				if ( $uri == '' )
-				{
-					Model::openAndWriteFailRequestsUriLogs( '/' );
-					View::redirect( '/main' );
-				} else 
-				{
-					Model::openAndWriteFailRequestsUriLogs( $uri );
-					View::returnError( '404' );
-				}
 			}
 		}
+        if ( $if_found != 1 )
+        {
+            if ( $uri == '' )
+            {
+                Model::openAndWriteFailRequestsUriLogs( '/' );
+                View::redirect( '/main' );
+            } else
+            {
+                Model::openAndWriteFailRequestsUriLogs( $uri );
+                View::returnError( '404' );
+            }
+        }
 	}
 }

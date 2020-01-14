@@ -1,4 +1,5 @@
 <?php
-return array(
-	'main' => 'main/main'
+return array (
+    'main' => 'main/main'
 );
+

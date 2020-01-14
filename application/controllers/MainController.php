@@ -8,6 +8,7 @@ class MainController
     {
         View::requireTemp ( "main" );
         MainModel::WorkWithDb ();
+
         return true;
     }
 }
