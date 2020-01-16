@@ -6,7 +6,9 @@ class MainController
 {
     public function actionMain()
     {
-        View::requireTemp ( "main" );
+        View::requireTemp ( "main", [
+            'it_work' => 'it work'
+        ] );
         MainModel::WorkWithDb ();
 
         return true;

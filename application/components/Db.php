@@ -3,6 +3,7 @@ namespace application\components;
 
 use PDO;
 use PDOException;
+use mysql_xdevapi\Exception;
 
 class DB
 {
