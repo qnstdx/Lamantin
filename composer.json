@@ -1,5 +1,12 @@
 {
   "require": {
-    "twig/twig": "1.*"
+    "twig/twig": "1.*",
+    "ext-mysql_xdevapi": "*",
+    "ext-pdo": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "application": "application"
+    }
   }
 }

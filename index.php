@@ -4,7 +4,7 @@ use application\components\Router;
 define ( 'ROOT', str_replace ( '\\', '/', dirname ( __FILE__ ) ) );
 
 require_once ( ROOT . '/application/config/settings/engine_settings.php' );
-require_once ( ROOT . '/application/components/lib/vendor/autoload.php' );
+require_once ( 'vendor/autoload.php' );
 
 spl_autoload_register ( function ( $class ) {
 	$path = ROOT . '/' . str_replace ( '\\', '/', $class ) . '.php';

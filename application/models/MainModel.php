@@ -13,5 +13,7 @@ class MainModel extends Model
     	 *Запрос к базе
     	*/
     	$data = $db->row( "SELECT * FROM foo WHERE id = :id", ['id' => 1] );
+
+    	return $data;
 	}
 }

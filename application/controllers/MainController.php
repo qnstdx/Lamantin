@@ -6,10 +6,12 @@ class MainController
 {
     public function actionMain()
     {
-        View::requireTemp ( "main", [
-            'it_work' => 'it work'
-        ] );
-        MainModel::WorkWithDb ();
+        View::requireTemp( "main", [
+            'it_work' => 'it work',
+            'h1' => 'Grappy',
+            'version' => '0.2.1',
+            'db_data' => MainModel::WorkWithDb()
+        ], $cache = true );
 
         return true;
     }

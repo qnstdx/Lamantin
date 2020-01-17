@@ -85,11 +85,9 @@ class Router
         {
             if ( $uri == '' )
             {
-                Model::openAndWriteFailRequestsUriLogs( '/' );
                 View::redirect( '/main' );
             } else
             {
-                Model::openAndWriteFailRequestsUriLogs( $uri );
                 View::returnError( '404' );
             }
         }

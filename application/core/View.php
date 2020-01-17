@@ -21,7 +21,7 @@ class View
         } 
     }
 
-    public static function requireTemp ( $temp_name, $params = [] )
+    public static function requireTemp ( $temp_name, $params = [], $cache = false )
     {
         if ( ! file_exists ( ROOT . '/public/temp/' . $temp_name . '.html' ) )
         {
@@ -32,7 +32,15 @@ class View
             Twig_Autoloader::register();
 
             $twig = new Twig_Loader_Filesystem(ROOT . '/public/temp' );
-            $t = new Twig_Environment( $twig );
+            if ( $cache == true )
+            {
+                $t = new Twig_Environment( $twig, array(
+                    'cache' => ROOT . '/public/cache',
+                    'debug' => true
+                ) );
+            } else {
+                $t = new Twig_Environment( $twig );
+            }
 
             echo $t->render( $temp_name . '.html', $params );
 
