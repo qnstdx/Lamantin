@@ -1,6 +1,10 @@
 <?php
 namespace application\core;
 
+use Exception;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
 use Twig_Autoloader;
 use Twig_Environment;
 use Twig_Loader_Filesystem;
@@ -34,15 +38,37 @@ class View
             $twig = new Twig_Loader_Filesystem(ROOT . '/public/temp' );
             if ( $cache == true )
             {
-                $t = new Twig_Environment( $twig, array(
-                    'cache' => ROOT . '/public/cache',
-                    'debug' => true
-                ) );
+                if ( DEBUG === true )
+                {
+                    $t = new Twig_Environment( $twig, array(
+                        'cache' => ROOT . '/public/cache',
+                        'debug' => true
+                    ) );
+                } else {
+                    $t = new Twig_Environment( $twig, array(
+                        'cache' => ROOT . '/public/cache'
+                    ) );
+                }
             } else {
-                $t = new Twig_Environment( $twig );
+                if ( DEBUG == true )
+                {
+                    $t = new Twig_Environment( $twig, array(
+                        'debug' => true
+                    ) );
+                } else {
+                    $t = new Twig_Environment( $twig );
+                }
             }
 
-            echo $t->render( $temp_name . '.html', $params );
+            try {
+                echo $t->render($temp_name . '.html', $params );
+            } catch ( LoaderError $e ) {
+                throw new Exception( 'LoaderError! ' . $e->getMessage(), 1 );
+            } catch ( RuntimeError $e ) {
+                throw new Exception( 'RuntimeError! ' . $e->getMessage(), 1 );
+            } catch ( SyntaxError $e ) {
+                throw new Exception( 'SyntaxError! ' . $e->getMessage(), 1 );
+            }
 
             return true;
         }     
