@@ -9,7 +9,7 @@ class MainController
         View::requireTemp( "main", [
             'it_work' => 'it work',
             'h1' => 'Grappy',
-            'version' => '0.2.1',
+            'version' => '0.2.3',
             'db_data' => MainModel::WorkWithDb()
         ], $cache = true );
 
