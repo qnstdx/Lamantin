@@ -1,9 +1,9 @@
 <?php
 namespace application\components;
 
+use Exception;
 use PDO;
 use PDOException;
-use mysql_xdevapi\Exception;
 
 class DB
 {
@@ -15,7 +15,7 @@ class DB
 			$this->db = new PDO ( 'mysql:dbname=' . DB_NAME . ';host=' . HOST . '', USER_NAME, USER_PASSWORD, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION] );
 			return true;
 		} catch ( PDOException $e ) {
-			throw new Exception( "Error Connect with db" . $e->getMessage(), 1 );		
+			throw new Exception( "Error Connect with db" . $e->getMessage(), 1 );
 		}
 	}
 
