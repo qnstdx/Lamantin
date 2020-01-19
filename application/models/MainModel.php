@@ -8,12 +8,12 @@ class MainModel extends Model
 {
     public static function WorkWithDb ()
     {  	
-    	$db = new DB;
+    	//$db = new DB;
     	/**
-    	 *Запрос к базе
+         * Для начала работы создайте базу и импортируйте sql dump, пропишите настройки подключения в engine_settings.php
     	*/
-    	$data = $db->row( "SELECT * FROM foo WHERE id = :id", ['id' => 1] );
+    	//$data = $db->row( "SELECT * FROM foo WHERE id = :id", ['id' => 1] );
 
-    	return $data;
+    	//return $data;
 	}
 }

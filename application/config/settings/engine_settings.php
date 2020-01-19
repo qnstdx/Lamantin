@@ -1,13 +1,14 @@
 <?php
 /**
- *На период разработки
+ * На период разработки
 */
 define ( 'DEBUG', true );
 
 /**
- *Настройки подключения к бд
+ * Настройки подключения к бд
+ * Введите свои настройки
 */
-define ( 'HOST', 'localhost' );
-define ( 'USER_NAME', 'mysql' );
-define ( 'USER_PASSWORD', 'mysql' );
-define ( 'DB_NAME', 'grappy' );
+define ( 'HOST', '' );
+define ( 'USER_NAME', '' );
+define ( 'USER_PASSWORD', '' );
+define ( 'DB_NAME', '' );
