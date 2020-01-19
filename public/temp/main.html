@@ -11,7 +11,6 @@
 	<link rel="stylesheet" type="text/css" href="/public/css/main.css">
 </head>
 <body>
-
 	<div id="app">
 		<header>
 			<center><h1 v-bind:title="data_last_update" id="grappy_h1">{{ h1 }}</h1></center>
@@ -20,7 +19,7 @@
 			<center><p v-on:click="opacityGrappy" v-if="seen" >{{ it_work }}!</p></center>
 		</main>
 		<footer>
-			{% if version == '0.2.3'  %}
+			{% if version == '0.3.0'  %}
 				<p align="center">This resource powered by GrappyEngine v{{ version }}<p>
 			{% else %}
 				<p>Your grappy is out of date, please install the latest, current version</p>

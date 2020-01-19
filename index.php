@@ -1,5 +1,5 @@
 <?php
-/*
+/**
 * |-------------------------------------|
 * |           GrappyFramework           |
 * |                                     |
@@ -8,24 +8,25 @@
  *|        Last update: 18.01.20.       |
 * |-------------------------------------|
 */
-
 use application\components\Router;
 
 define ( 'ROOT', str_replace ( '\\', '/', dirname ( __FILE__ ) ) );
 
-require_once ( ROOT . '/application/config/settings/engine_settings.php' );
 require_once ( ROOT . '/vendor/autoload.php' );
 
 spl_autoload_register ( function ( $class ) {
-	$path = ROOT . '/' . str_replace ( '\\', '/', $class ) . '.php';
+    $path = ROOT . '/' . str_replace ( '\\', '/', $class ) . '.php';
 
-	if ( file_exists ( $path ) )
-	{
-		require $path;
-	}
+    if ( file_exists ( $path ) )
+    {
+        require $path;
+    }
 } );
 
-if ( DEBUG === true )
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+if ( getenv('APP_DEBUG' ) == true )
 {
 	ini_set ( 'display_errors', 1 );
 	error_reporting ( E_ALL );

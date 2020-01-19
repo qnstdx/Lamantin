@@ -12,7 +12,7 @@ class DB
 	function __construct()
 	{
 		try {
-			$this->db = new PDO ( 'mysql:dbname=' . DB_NAME . ';host=' . HOST . '', USER_NAME, USER_PASSWORD, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION] );
+			$this->db = new PDO ( 'mysql:dbname=' . getenv( 'DB_DATABASE' ) . ';host=' . getenv( 'DB_HOST' ) . '', getenv('DB_USERNAME'), getenv( 'DB_PASSWORD' ), [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION] );
 			return true;
 		} catch ( PDOException $e ) {
 			throw new Exception( "Error Connect with db" . $e->getMessage(), 1 );

@@ -10,7 +10,7 @@ class MainModel extends Model
     {  	
     	//$db = new DB;
     	/**
-         * Для начала работы создайте базу и импортируйте sql dump, пропишите настройки подключения в engine_settings.php
+         * Для начала работы создайте базу и импортируйте файл sql dump, пропишите свои настройки в файле .env
     	*/
     	//$data = $db->row( "SELECT * FROM foo WHERE id = :id", ['id' => 1] );
 

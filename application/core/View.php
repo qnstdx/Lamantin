@@ -38,7 +38,7 @@ class View
             $twig = new Twig_Loader_Filesystem(ROOT . '/public/temp' );
             if ( $cache == true )
             {
-                if ( DEBUG === true )
+                if ( getenv( 'APP_DEBUG' ) === true )
                 {
                     $t = new Twig_Environment( $twig, array(
                         'cache' => ROOT . '/public/cache',
@@ -50,7 +50,7 @@ class View
                     ) );
                 }
             } else {
-                if ( DEBUG == true )
+                if ( getenv( 'APP_DEBUG' ) == true )
                 {
                     $t = new Twig_Environment( $twig, array(
                         'debug' => true
