@@ -1,10 +1,20 @@
 <?php
+/*
+* |-------------------------------------|
+* |           GrappyFramework           |
+* |                                     |
+* |  https://github.com/Phpesher/Grappy |
+* |              v0.2.3                 |
+ *|        Last update: 18.01.20.       |
+* |-------------------------------------|
+*/
+
 use application\components\Router;
 
 define ( 'ROOT', str_replace ( '\\', '/', dirname ( __FILE__ ) ) );
 
 require_once ( ROOT . '/application/config/settings/engine_settings.php' );
-require_once ( 'vendor/autoload.php' );
+require_once ( ROOT . '/vendor/autoload.php' );
 
 spl_autoload_register ( function ( $class ) {
 	$path = ROOT . '/' . str_replace ( '\\', '/', $class ) . '.php';
