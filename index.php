@@ -4,8 +4,8 @@
 * |           GrappyFramework           |
 * |                                     |
 * |  https://github.com/Phpesher/Grappy |
-* |              v0.2.3                 |
- *|        Last update: 18.01.20.       |
+* |              v0.4.0                 |
+ *|        Last update: 20 .01.20.       |
 * |-------------------------------------|
 */
 use application\components\Router;
