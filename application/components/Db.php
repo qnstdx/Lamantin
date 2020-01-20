@@ -2,48 +2,43 @@
 namespace application\components;
 
 use Exception;
-use PDO;
-use PDOException;
+use \RedBeanPHP\R;
 
-class DB
+class db
 {
-	protected $db;
+    /**
+     * @var Object
+     */
+    private $db;
 
-	function __construct()
-	{
-		try {
-			$this->db = new PDO ( 'mysql:dbname=' . getenv( 'DB_DATABASE' ) . ';host=' . getenv( 'DB_HOST' ) . '', getenv('DB_USERNAME'), getenv( 'DB_PASSWORD' ), [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION] );
-			return true;
-		} catch ( PDOException $e ) {
-			throw new Exception( "Error Connect with db" . $e->getMessage(), 1 );
-		}
-	}
+    /**
+     * @param string $host
+     * @param string $db_name
+     * @param string $user_name
+     * @param string $password
+     * @return mixed
+     * @throws Exception
+     */
+    public function __construct ( $host, $db_name, $user_name, $password )
+    {
+        $db = R::setup( 'mysql:host=' . $host . ';db_name=' . $db_name . '', $user_name, $password );
 
-	public function query ( $sql, $params = [] )
-	{
-		$stmt = $this->db->prepare( $sql );
-
-		if ( ! empty ( $params ) )
-		{
-			foreach ( $params as $key => $val ) 
-			{
-				$stmt->bindValue( ":$key", $val );
-			}
-		}
-		$stmt->execute();
-
-		return $stmt;
-	}
-
-	public function row ( $sql, $params = [] )
-	{
-		$result = $this->query( $sql, $params );
-		return $result->fetchAll( PDO::FETCH_ASSOC );
-	}
-
-	public function column ( $sql, $params = [] )
-	{
-		$result = $this->query( $sql, $params );
-		return $result->fetchColumn();
-	}
+        if ( ! R::testConnection() )
+        {
+            throw new Exception( "Error connecting with you DataBase", 1 );
+        } else {
+            $this->db = $db;
+            return true;
+        }
+    }
+    /**
+     * @param $sql
+     * @param array $params
+     * @return int
+     */
+    public function query ( $sql, $params = [] )
+    {
+        $some_data = R::exec( $sql, $params );
+        return $some_data;
+    }
 }
