@@ -2,6 +2,12 @@
   "require": {
     "twig/twig": "1.*",
     "ext-pdo": "*",
-    "vlucas/phpdotenv": "^4.1"
+    "vlucas/phpdotenv": "^4.1",
+    "gabordemooij/redbean": "^5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "application\\": "application/"
+    }
   }
 }
