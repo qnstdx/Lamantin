@@ -11,9 +11,10 @@ class MainController
             'title' => 'Grappy',
             'it_work' => 'it work',
             'h1' => 'Grappy',
-            'version' => getenv( 'APP_V' ),
+            'version' => getenv('APP_V' ),
             'db_data' => MainModel::WorkWithDb()
         ], $cache = true );
+
         return true;
     }
 }
