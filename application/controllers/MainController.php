@@ -16,7 +16,7 @@ class MainController
                 'version' => getenv('APP_V'),
                 'db_data' => MainModel::WorkWithDb()
             ], $cache = true);
-        } catch (Exception $e) {
+        } catch ( Exception $e ) {
             if ( getenv( 'APP_DEBUG' == true ) )
             {
                 Log::debugLogger( 'DEBUG', 'Error with temp main.html', [
