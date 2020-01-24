@@ -62,7 +62,7 @@ class __TwigTemplate_22b343623a03d6d37e9c113c6abc3d7a64cad2f5bcdd6780fb275ad21e1
 \t\t<footer>
 \t\t\t";
         // line 22
-        if ((($context["version"] ?? null) == "0.4.0")) {
+        if ((($context["version"] ?? null) == "0.5.0")) {
             // line 23
             echo "\t\t\t\t<p align=\"center\">This resource powered by GrappyEngine v";
             echo twig_escape_filter($this->env, ($context["version"] ?? null), "html", null, true);
@@ -70,9 +70,7 @@ class __TwigTemplate_22b343623a03d6d37e9c113c6abc3d7a64cad2f5bcdd6780fb275ad21e1
 \t\t\t";
         } else {
             // line 25
-            echo "\t\t\t\t<p>Your grappy is out of date, please install ";
-            echo twig_escape_filter($this->env, ($context["version"] ?? null), "html", null, true);
-            echo "the latest, current version</p>
+            echo "\t\t\t\t<p>Your grappy is out of date, please install the latest, current version</p>
 \t\t\t\t<a href=\"https://github.com/Phpesher/Grappy\">Download</a>
 \t\t\t";
         }
@@ -103,7 +101,7 @@ class __TwigTemplate_22b343623a03d6d37e9c113c6abc3d7a64cad2f5bcdd6780fb275ad21e1
 
     public function getDebugInfo()
     {
-        return array (  84 => 30,  80 => 28,  73 => 25,  67 => 23,  65 => 22,  59 => 19,  53 => 16,  40 => 6,  34 => 3,  30 => 1,);
+        return array (  82 => 30,  78 => 28,  73 => 25,  67 => 23,  65 => 22,  59 => 19,  53 => 16,  40 => 6,  34 => 3,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

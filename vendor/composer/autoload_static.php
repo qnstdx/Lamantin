@@ -11,6 +11,10 @@ class ComposerStaticInit65bc94afdea970ec3145ce8e7513fd31
     );
 
     public static $prefixLengthsPsr4 = array (
+        'a' => 
+        array (
+            'application\\' => 12,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -19,9 +23,18 @@ class ComposerStaticInit65bc94afdea970ec3145ce8e7513fd31
         array (
             'Symfony\\Polyfill\\Ctype\\' => 23,
         ),
+        'R' => 
+        array (
+            'RedBeanPHP\\' => 11,
+        ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'PhpOption\\' => 10,
+        ),
+        'M' => 
+        array (
+            'Monolog\\' => 8,
         ),
         'D' => 
         array (
@@ -30,6 +43,10 @@ class ComposerStaticInit65bc94afdea970ec3145ce8e7513fd31
     );
 
     public static $prefixDirsPsr4 = array (
+        'application\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/application',
+        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
@@ -38,9 +55,21 @@ class ComposerStaticInit65bc94afdea970ec3145ce8e7513fd31
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
+        'RedBeanPHP\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gabordemooij/redbean/RedBeanPHP',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
         'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
+        ),
+        'Monolog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
         'Dotenv\\' => 
         array (

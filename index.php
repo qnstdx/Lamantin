@@ -4,15 +4,15 @@
 * |           GrappyFramework           |
 * |                                     |
 * |  https://github.com/Phpesher/Grappy |
-* |              v0.4.0                 |
- *|        Last update: 20.01.20.       |
+* |              v0.5.0                 |
+ *|        Last update: 24.01.20.       |
 * |-------------------------------------|
 */
-use application\components\Router;
-
 define ( 'ROOT', str_replace ( '\\', '/', dirname ( __FILE__ ) ) );
 
 require_once ( ROOT . '/vendor/autoload.php' );
+
+use application\components\Router;
 
 $dotenv = Dotenv\Dotenv::createImmutable( __DIR__ );
 $dotenv->load();

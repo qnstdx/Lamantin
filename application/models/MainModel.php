@@ -9,8 +9,8 @@ class MainModel extends Model
     public static function WorkWithDb ()
     {
         try {
-            $db = new db ( getenv('DB_HOST'), getenv('DB_DATABASE'), getenv('DB_USERNAME'), getenv('DB_PASSWORD') );
-            return $db;
+            //$db = new db ( getenv('DB_HOST'), getenv('DB_DATABASE'), getenv('DB_USERNAME'), getenv('DB_PASSWORD') );
+            //return $db;
         } catch (\Exception $e) {
             throw new \Exception ( 'Error connect with DataBase' . $e->getMessage(), 1 );
         }
