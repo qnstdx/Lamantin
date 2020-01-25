@@ -4,8 +4,8 @@
 * |           GrappyFramework           |
 * |                                     |
 * |  https://github.com/Phpesher/Grappy |
-* |              v0.5.0                 |
- *|        Last update: 24.01.20.       |
+* |              v0.6.0                 |
+ *|        Last update: 25.01.20.       |
 * |-------------------------------------|
 */
 define ( 'ROOT', str_replace ( '\\', '/', dirname ( __FILE__ ) ) );

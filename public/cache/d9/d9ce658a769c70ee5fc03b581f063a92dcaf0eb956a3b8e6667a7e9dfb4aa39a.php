@@ -62,7 +62,7 @@ class __TwigTemplate_22b343623a03d6d37e9c113c6abc3d7a64cad2f5bcdd6780fb275ad21e1
 \t\t<footer>
 \t\t\t";
         // line 22
-        if ((($context["version"] ?? null) == "0.5.0")) {
+        if ((($context["version"] ?? null) == "0.6.0")) {
             // line 23
             echo "\t\t\t\t<p align=\"center\">This resource powered by GrappyEngine v";
             echo twig_escape_filter($this->env, ($context["version"] ?? null), "html", null, true);
