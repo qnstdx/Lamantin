@@ -88,7 +88,7 @@ class Router
                 View::redirect( '/main' );
             } else
             {
-                View::returnError( '404' );
+                View::returnErrorPage( '404' );
             }
         }
 	}

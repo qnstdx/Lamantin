@@ -1,6 +1,7 @@
 <?php
 namespace application\core;
 
+use application\components\GrappyLogger;
 use Exception;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -11,13 +12,20 @@ use Twig_Loader_Filesystem;
 
 class View
 {
-    public static final function returnError( $error_code )
+    /**
+     * Подключает страницу с ошибкой
+     * @param $error_code
+     * @return bool
+     */
+    public static final function returnErrorPage( $error_code )
     {
         $require_path = ROOT . '/public/temp/errors/' . $error_code . '.html';
 
         if ( ! file_exists( $require_path ) )
         {
-            Model::openAndWriteFileLogs("\nFile with error code: $error_code, not found on this server! \n path: $require_path\n");
+            GrappyLogger::debugLogger('TEMP_ERROR', "Template with $error_code not found!", [
+                'URL' => $_SERVER['REQUEST_URI']
+            ]);
             return false;
         } else {
             require_once ( $require_path );
@@ -25,28 +33,38 @@ class View
         } 
     }
 
-    public static function requireTemp ( $temp_name, $params = [], $cache = false )
+    /**
+     * Подключает нужный шаблон
+     * @param $temp_name
+     * @param array $params
+     * @param bool $cache
+     * @return bool
+     * @throws Exception
+     */
+    public static function renderTemp ( $temp_name, $params = [], $cache = false )
     {
-        if ( ! file_exists ( ROOT . '/public/temp/' . $temp_name . '.html' ) )
+        if ( ! file_exists ( ROOT . getenv( 'APP_TEMPS_P' ) . $temp_name . '.html' ) )
         {
             //Пишем в лог файл
-           Model::openAndWriteFileLogs("File (template) with name: $temp_name, not found on this server!");
+            GrappyLogger::debugLogger('TEMP_ERROR', "Template with name $temp_name not found!", [
+                'URL' => $_SERVER['REQUEST_URI']
+            ]);
             return false;          
         } else {
             Twig_Autoloader::register();
 
-            $twig = new Twig_Loader_Filesystem(ROOT . '/public/temp' );
+            $twig = new Twig_Loader_Filesystem(ROOT . getenv( 'APP_TEMPS_P' ) );
             if ( $cache == true )
             {
                 if ( getenv( 'APP_DEBUG' ) === true )
                 {
                     $t = new Twig_Environment( $twig, array(
-                        'cache' => ROOT . '/public/cache',
+                        'cache' => ROOT . getenv( 'APP_TWIG_CACHE_P' ),
                         'debug' => true
                     ) );
                 } else {
                     $t = new Twig_Environment( $twig, array(
-                        'cache' => ROOT . '/public/cache'
+                        'cache' => ROOT . getenv( 'APP_TWIG_CACHE_P' )
                     ) );
                 }
             } else {
