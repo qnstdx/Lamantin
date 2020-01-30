@@ -1,8 +1,8 @@
 <?php
-namespace application\models;
+namespace Grappy\app\models;
 
-use application\core\Model;
-use application\components\db;
+use Grappy\app\core\Model;
+use Grappy\app\components\db;
 
 class MainModel extends Model
 {

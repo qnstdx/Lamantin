@@ -16,10 +16,6 @@ class ComposerStaticInit65bc94afdea970ec3145ce8e7513fd31
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
-        'a' => 
-        array (
-            'application\\' => 12,
-        ),
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
@@ -46,6 +42,10 @@ class ComposerStaticInit65bc94afdea970ec3145ce8e7513fd31
         array (
             'Monolog\\' => 8,
         ),
+        'G' => 
+        array (
+            'Grappy\\app\\' => 11,
+        ),
         'D' => 
         array (
             'Dotenv\\' => 7,
@@ -60,10 +60,6 @@ class ComposerStaticInit65bc94afdea970ec3145ce8e7513fd31
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-        ),
-        'application\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/application',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -96,6 +92,10 @@ class ComposerStaticInit65bc94afdea970ec3145ce8e7513fd31
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Grappy\\app\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
         'Dotenv\\' => 
         array (

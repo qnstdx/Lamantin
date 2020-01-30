@@ -1,8 +1,8 @@
 <?php
-namespace application\components;
+namespace Grappy\app\components;
 
-use application\core\Model;
-use application\core\View;
+use Grappy\app\core\Model;
+use Grappy\app\core\View;
 
 class Router
 {
@@ -15,7 +15,7 @@ class Router
 	public function __construct ()
 	{
 		// Подключаем файл с роутами
-		$routes_path = ROOT . '/application/config/routes.php';
+		$routes_path = ROOT . '/app/config/routes.php';
 		// И записываем подключая
 		$this->routes = require ( $routes_path );
 	}
@@ -64,7 +64,7 @@ class Router
 
 				$parameters = $segments;
 
-				$controller_file = ROOT . '/application/controllers/' . $controller_name . '.php';
+				$controller_file = ROOT . '/app/controllers/' . $controller_name . '.php';
 
 				if ( file_exists ( $controller_file ) )
 				{
