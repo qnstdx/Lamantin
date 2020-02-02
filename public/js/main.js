@@ -12,7 +12,7 @@ let app = new Vue({
     delimiters: ['${', '}'],
     data: {
         vue_answer: 'VueJS Worked!',
-        data_last_update: 'Last update: 18.01.2020',
+        data_last_update: 'Last update: 2.02.2020',
         seen: true
     },
     methods: {
