@@ -1,7 +1,7 @@
 <?php
-namespace Grappy\app\core;
+namespace Grappy\App\Core;
 
-use Grappy\app\components\GrappyLogger;
+use Grappy\App\Components\GrappyLogger;
 use Exception;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;

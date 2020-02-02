@@ -1,7 +1,7 @@
 <?php
-use Grappy\app\components\GrappyLogger;
-use Grappy\app\models\MainModel;
-use Grappy\app\core\View;
+use Grappy\App\Components\GrappyLogger;
+use Grappy\App\Models\MainModel;
+use Grappy\App\Core\View;
 
 class MainController
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Grappy\app\components;
+namespace Grappy\App\Components;
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;

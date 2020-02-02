@@ -1,5 +1,5 @@
 <?php
-namespace Grappy\app\components;
+namespace Grappy\App\Components;
 
 use Exception;
 use \RedBeanPHP\R;

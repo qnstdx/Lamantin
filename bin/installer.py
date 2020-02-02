@@ -19,7 +19,7 @@ banner()
 print('\t\t\t\t\t\t\tversion 0.7.0\n\n')
 
 print('Change operation:\n')
-print('[1]: Install composer\'s dependencies\n\n')
+print('[1]: Install composer\'s dependencies')
 
 operation = input('Operation: ')
 

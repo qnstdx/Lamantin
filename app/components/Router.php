@@ -1,8 +1,8 @@
 <?php
-namespace Grappy\app\components;
+namespace Grappy\App\Components;
 
-use Grappy\app\core\Model;
-use Grappy\app\core\View;
+use Grappy\App\Core\Model;
+use Grappy\App\Core\View;
 
 class Router
 {

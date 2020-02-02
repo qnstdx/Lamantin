@@ -44,7 +44,7 @@ class ComposerStaticInit65bc94afdea970ec3145ce8e7513fd31
         ),
         'G' => 
         array (
-            'Grappy\\app\\' => 11,
+            'Grappy\\App\\' => 11,
         ),
         'D' => 
         array (
@@ -93,7 +93,7 @@ class ComposerStaticInit65bc94afdea970ec3145ce8e7513fd31
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
-        'Grappy\\app\\' => 
+        'Grappy\\App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),

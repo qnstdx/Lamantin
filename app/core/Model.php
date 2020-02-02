@@ -1,6 +1,6 @@
 <?php
-namespace Grappy\app\core;
+namespace Grappy\App\Core;
 
-use Grappy\app\components\db;
+use Grappy\App\Components\db;
 
 abstract class Model{}
