@@ -4,17 +4,20 @@
 * |           GrappyFramework           |
 * |                                     |
 * |  https://github.com/Phpesher/Grappy |
-* |              v0.8.0                 |
+* |              v0.8.2                 |
  *|        Last update: 12.02.20        |
 * |-------------------------------------|
 */
-define ( 'ROOT', str_replace ( '\\', '/', dirname ( __FILE__ ) ) );
-
-require_once ( ROOT . '/vendor/autoload.php' );
 
 use Grappy\App\Components\Router;
 
-$dotenv = Dotenv\Dotenv::createImmutable( __DIR__ );
+define ( 'ROOT', str_replace ( '\\', '/', __DIR__ ) );
+
+require_once ( ROOT . '/vendor/autoload.php' );
+require_once ( ROOT . '/config/bootstrap.php' );
+
+// Load env configuration file
+$dotenv = Dotenv\Dotenv::createImmutable( ROOT );
 $dotenv->load();
 
 if ( getenv('APP_DEBUG' ) == true )
