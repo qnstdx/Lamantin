@@ -3,6 +3,11 @@
 
 ![Grappy]( https://i.ibb.co/nbWvmPb/Grappy-Logo.png "Grappy")
 
+# Requirements
+---------
+- PHP 7.1 <
+- Composer
+
 # Instalation
 --------- 
 
@@ -11,7 +16,6 @@ git clone https://github.com/Phpesher/Grappy/
 cd Grappy-master
 composer install
 ```
-
-# Work with grappy
+# Work with Grappy
 
 comming soon
