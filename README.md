@@ -14,7 +14,7 @@
 ```sh
 git clone https://github.com/Phpesher/Grappy/
 cd Grappy-master
-composer install
+composer update
 ```
 # Work with Grappy
 
