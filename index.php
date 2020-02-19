@@ -4,8 +4,8 @@
 * |           GrappyFramework           |
 * |                                     |
 * |  https://github.com/Phpesher/Grappy |
-* |              v0.8.2                 |
- *|        Last update: 12.02.20        |
+* |              v0.8.3                 |
+ *|        Last update: 15.02.20        |
 * |-------------------------------------|
 */
 

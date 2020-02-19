@@ -2,5 +2,10 @@
 namespace Grappy\App\Core;
 
 use Grappy\App\Components\db;
+use Grappy\App\Core\Ents\User;
 
-abstract class Model{}
+class Model extends User{
+    public function insertData() {
+        //
+    }
+}

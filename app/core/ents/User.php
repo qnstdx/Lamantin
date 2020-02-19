@@ -1,6 +1,8 @@
 <?php
 // Default Doctrine Entities
 // For example
+namespace Grappy\App\Core\Ents;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
