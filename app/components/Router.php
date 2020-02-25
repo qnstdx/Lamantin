@@ -48,7 +48,7 @@ class Router
 				$internal_route = preg_replace ( "~$uri_pattern~", $path, $uri );
 				
 				// Определяем экшен и контроллер которые это обработают
-				$segments = explode ( '/', $internal_route );
+				$segments = explode ( '@', $internal_route );
 				//print_r($segments);
 				
 				/**
