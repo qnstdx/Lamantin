@@ -13,7 +13,7 @@
 
 ```sh
 git clone https://github.com/Phpesher/Grappy/
-composer update
+composer install
 ```
 # Work with Grappy
 
