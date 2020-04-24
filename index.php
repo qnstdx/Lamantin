@@ -20,7 +20,7 @@ require_once ( ROOT . '/config/bootstrap.php' );
 $dotenv = Dotenv\Dotenv::createImmutable( ROOT );
 $dotenv->load();
 
-if ( getenv('APP_DEBUG' ) === true )
+if ( getenv('APP_DEBUG' ) === 'true' )
 {
 	ini_set ( 'display_errors', 1 );
 	error_reporting ( E_ALL );
