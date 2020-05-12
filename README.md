@@ -11,7 +11,7 @@
 # Instalation
 --------- 
 
-```sh
+```shell script
 git clone https://github.com/Phpesher/Grappy/
 composer install
 ```
