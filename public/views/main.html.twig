@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/public/css/main.css">
+    <title>Document</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Lamantin Framework | Main</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+</head>
+<body>
+<div class="flex-center position-ref full-height">
+    {% if auth() == true %}
+        <div class="top-right links">
+            <a href="/home">Home</a>
+        </div>
+    {% else %}
+        <div class="top-right links">
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </div>
+    {% endif %}
+    <div class="content">
+        <div class="title m-b-md">
+            Lamantin Framework
+        </div>
+    </div>
+    <p>&nbsp;&nbsp;&nbsp;v1.0.0</p>
+</div>
+</body>
+</html>

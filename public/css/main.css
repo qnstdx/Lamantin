@@ -1,19 +1,56 @@
-* {
-	font-family: 'Kulim Park', sans-serif;
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
 }
 
-h1 {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 100px;
-	color: #9EA6D9;
-	width: 20%;
+.full-height {
+    height: 100vh;
 }
 
-p {
-	font-size: 25px;
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
-#grappy_logo {
-	float: right;
-	width: 30%;
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+.form form {
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 20px;
 }
