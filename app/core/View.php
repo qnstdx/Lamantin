@@ -21,13 +21,16 @@ class view
 
     public static function render($name, $params = []): void
     {
-        if (!file_exists(ROOT . getenv('APP_TEMPS_PATH') . $name . '.html.twig')) {
-            //Пишем в лог файл'
-            echo ROOT . getenv('APP_TEMPS_PATH') . $name . '.html.twig';
+        if (!file_exists(ROOT . getenv('APP_VIEWS_PATH') . $name . '.html.twig')) {
+            throw new Exception("View $name not found! path: " . ROOT . getenv('APP_VIEWS_PATH') . $name . '.html.twig');
         } else {
             Twig_Autoloader::register();
 
-            $twig = new Twig_Loader_Filesystem(ROOT . getenv('APP_TEMPS_PATH'));
+            $twig = new Twig_Loader_Filesystem(ROOT . getenv('APP_VIEWS_PATH'));
+
+            if (!file_exists(ROOT . getenv('APP_TWIG_CACHE_P'))) {
+                mkdir(ROOT . getenv('APP_TWIG_CACHE_P'));
+            }
 
             if (getenv('APP_DEBUG') === 'true') {
                 $t = new Twig_Environment($twig, array(
@@ -45,11 +48,11 @@ class view
             try {
                 echo $t->render($name . '.html.twig', $params);
             } catch (LoaderError $e) {
-                throw new Exception('LoaderError! ' . $e->getMessage(), 1);
+                throw new Exception('LoaderError! ' . $e->getMessage());
             } catch (RuntimeError $e) {
-                throw new Exception('RuntimeError! ' . $e->getMessage(), 1);
+                throw new Exception('RuntimeError! ' . $e->getMessage());
             } catch (SyntaxError $e) {
-                throw new Exception('SyntaxError! ' . $e->getMessage(), 1);
+                throw new Exception('SyntaxError! ' . $e->getMessage());
             }
         }
     }

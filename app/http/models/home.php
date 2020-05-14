@@ -10,7 +10,7 @@ class home
         return isset($_COOKIE['t']) === true ? true : false;
     }
 
-    public function get($token)
+    public function get($token): array
     {
         return Users::where('token', $token)->get()->toArray();
     }

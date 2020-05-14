@@ -21,39 +21,19 @@
   <component name="ChangeListManager">
     <list default="true" id="8eeb4694-ce55-460a-ae5b-3dbd47047a2a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/GrappyLogger.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Router.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/routes.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/MainController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/core/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/ents/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/log/debug/debug_logs.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/log/info/info_logs.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/MainModel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bootstrap.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/cli-config.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cache/05/0568d3082eb959bd748967a29f1dc7a07d3d9b7035bb86bbfc6b797246911ff4.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cache/07/07b093115000d407c78c6357f315b2f382d75f7022d8b93f3e2f09e0111acc2a.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cache/d9/d9ce658a769c70ee5fc03b581f063a92dcaf0eb956a3b8e6667a7e9dfb4aa39a.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/temp/errors/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/temp/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/controllers/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/controllers/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/models/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/models/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/models/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/models/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/models/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/models/register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable path="composer" />
@@ -130,7 +110,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../nil-web-site" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
@@ -149,7 +129,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589365857813</updated>
-      <workItem from="1589365859680" duration="12340000" />
+      <workItem from="1589365859680" duration="13258000" />
+      <workItem from="1589429189973" duration="1433000" />
+      <workItem from="1589474909010" duration="3053000" />
     </task>
     <servers />
   </component>
@@ -166,16 +148,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="708" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589369531061">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="708" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1589369531061" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589373577706">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589476306248">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589373577706" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589476306248" />
     <state x="736" y="432" key="ComposerInitDialogKey" timestamp="1589367314315">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -184,10 +167,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589367186867" />
-    <state x="763" y="243" key="NewPhpClassDialog" timestamp="1589376788402">
+    <state x="763" y="243" key="NewPhpClassDialog" timestamp="1589476243102">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="763" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589376788402" />
+    <state x="763" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589476243102" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1589372711321">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

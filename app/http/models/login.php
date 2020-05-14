@@ -7,7 +7,7 @@ use Lamantin\App\http\models\tables\Users;
 
 class login extends model
 {
-    public function login($email, $password)
+    public function login(string $email, string $password)
     {
         if ($this->count($email) > 0 && $this->match($email, $password) === true) {
             $token = md5($email . $password . time());
@@ -21,12 +21,12 @@ class login extends model
         }
     }
 
-    private function count($email)
+    private function count(string $email): int
     {
         return Users::where('email', $email)->count();
     }
 
-    private function match($email, $password): bool
+    private function match(string $email, string $password): bool
     {
         $user = Users::where('email', $email)->get()->toArray();
 
