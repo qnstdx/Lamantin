@@ -2,3 +2,4 @@
 vendor
 /public/views/cache
 composer.lock
+public
