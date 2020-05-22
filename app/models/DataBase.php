@@ -20,6 +20,8 @@ class DataBase
         if (is_null(self::$instance)) {
            self::boot();
         }
+
+        return self::$instance;
     }
 
     private static function boot()

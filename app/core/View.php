@@ -3,21 +3,36 @@
 namespace Lamantin\App\core;
 
 use Exception;
-use Lamantin\App\components\csrf;
-use Lamantin\App\models\home;
+use Lamantin\App\Components\csrf;
+use Lamantin\App\Models\home;
 use Twig\Environment;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
 use Twig\Loader\FilesystemLoader;
 
-class view
+/**
+ * Class View
+ * @package Lamantin\App\core
+ * @author Jolydev <superduperproger@gmail.com>
+ */
+class View
 {
+    /**
+     * @param string $name
+     * @return void
+     */
     public static function error(string $name): void
     {
         require_once(ROOT . '/public/temps/' . $name . '.html.twig');
     }
 
+    /**
+     * @param string $name
+     * @param array $params
+     * @throws Exception
+     * @return void
+     */
     public static function render(string $name, array $params = []): void
     {
         if (!file_exists(ROOT . getenv('APP_VIEWS_PATH') . $name . '.html.twig')) {
@@ -32,7 +47,7 @@ class view
                 $twig = new Environment($loader);
             }
 
-            (new view())->addTwigFunctions($twig);
+            (new View())->addTwigFunctions($twig);
 
             try {
                 echo $twig->render($name . '.html.twig', $params);
@@ -46,16 +61,20 @@ class view
         }
     }
 
-    private function addTwigFunctions(Environment $t): void
+    /**
+     * @param Environment $twig
+     * @return void
+     */
+    private function addTwigFunctions(Environment $twig): void
     {
         $csrf = new \Twig\TwigFunction('csrf', function () {
-            return (new csrf())->get();
+            return (new Csrf())->get();
         });
         $auth = new \Twig\TwigFunction('auth', function () {
-            return (new home())->auth();
+            return (new Home())->auth();
         });
 
-        $t->addFunction($csrf);
-        $t->addFunction($auth);
+        $twig->addFunction($csrf);
+        $twig->addFunction($auth);
     }
 }

@@ -12,48 +12,68 @@ use Phroute\Phroute\Exception\HttpMethodNotAllowedException;
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
 use Phroute\Phroute\RouteCollector;
 
-class bootstrap
+/**
+ * Class Bootstrap
+ * @package Lamantin\App\core
+ * @author Jolydev <superduperproger@gmail.com>
+ */
+class Bootstrap
 {
+    /**
+     * @var RouteCollector
+     */
     private $router;
 
+    /**
+     * Bootstrap constructor.
+     */
     public function __construct()
     {
         $this->router = new RouteCollector();
     }
 
+    /**
+     * @return void
+     */
     public function init(): void
     {
         $this->routes();
         $this->dispatch();
     }
 
+    /**
+     * @return void
+     */
     private function routes(): void
     {
         $this->router->get('/', function () {
-            return (new main())->mainPage();
+            return (new Main())->mainPage();
         });
         $this->router->get('/login', function () {
-            return (new login())->loginPage();
+            return (new Login())->loginPage();
         });
         $this->router->get('/register', function() {
-            return (new register())->registerPage();
+            return (new Register())->registerPage();
         });
 
         $this->router->post('/Login', function() {
-            return (new login())->loginPost();
+            return (new Login())->loginPost();
         });
         $this->router->post('/Register', function() {
-            return (new register())->registerPost();
+            return (new Register())->registerPost();
         });
 
         $this->router->any('/home', function() {
-            return (new home())->homePage();
+            return (new Home())->homePage();
         });
         $this->router->any('/logout', function() {
-            return (new logout())->logout();
+            return (new Logout())->logout();
         });
     }
 
+    /**
+     * @return void
+     */
     private function dispatch(): void
     {
         $dispatcher = new Dispatcher($this->router->getData());
