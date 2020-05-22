@@ -81,7 +81,7 @@ class Bootstrap
         try {
             $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
         } catch (HttpRouteNotFoundException $e) {
-            view::error('404');
+            View::error('404');
         } catch (HttpMethodNotAllowedException $e) {
             exit('This method not allowed here!');
         }
