@@ -16,7 +16,6 @@ class bootstrap
 {
     private $router;
 
-    // Controllers exemplars
     public function __construct()
     {
         $this->router = new RouteCollector();
