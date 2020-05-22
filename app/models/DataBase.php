@@ -1,12 +1,28 @@
 <?php
-namespace Lamantin\App\http\models;
+namespace Lamantin\App\models;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 class DataBase
 {
+    private static $instance = null;
 
-    function __construct()
+    private function __construct() {}
+
+    private function __clone() {}
+
+    private function __sleep() {}
+
+    private function __wakeup() {}
+
+    public static function getInstance()
+    {
+        if (is_null(self::$instance)) {
+           self::boot();
+        }
+    }
+
+    private static function boot()
     {
         $capsule = new Capsule;
         $capsule->addConnection([

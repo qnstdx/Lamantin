@@ -1,9 +1,9 @@
 <?php
 
-namespace Lamantin\App\http\models\tables;
+namespace Lamantin\App\models\tables;
 
 use Illuminate\Database\Eloquent\Model;
-use Lamantin\App\core\bootstrap;
+use Lamantin\App\models\DataBase;
 
 class Users extends Model
 {
@@ -12,7 +12,7 @@ class Users extends Model
 
     public function __construct(array $attributes = [])
     {
-        (new bootstrap())->database();
+        DataBase::getInstance();
         parent::__construct($attributes);
     }
 }

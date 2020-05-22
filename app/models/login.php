@@ -1,13 +1,13 @@
 <?php
 
-namespace Lamantin\App\http\models;
+namespace Lamantin\App\models;
 
 use Lamantin\App\core\model;
-use Lamantin\App\http\models\tables\Users;
+use Lamantin\App\models\tables\Users;
 
 class login extends model
 {
-    public function login(string $email, string $password)
+    public function login(string $email, string $password): bool
     {
         if ($this->count($email) > 0 && $this->match($email, $password) === true) {
             $token = md5($email . $password . time());
@@ -18,6 +18,10 @@ class login extends model
 
             setcookie('t', $token, time() + 1296000);
             header('Location: /home');
+
+            return true;
+        } else {
+            return false;
         }
     }
 

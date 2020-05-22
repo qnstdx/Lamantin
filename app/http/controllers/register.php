@@ -14,6 +14,6 @@ class register
     public function registerPost()
     {
         csrf::match($_POST['CSRF-TOKEN']);
-        (new \Lamantin\App\http\models\register())->register($_POST['name'], $_POST['email'], password_hash($_POST['password'], PASSWORD_DEFAULT));
+        (new \Lamantin\App\models\register())->register($_POST['name'], $_POST['email'], password_hash($_POST['password'], PASSWORD_DEFAULT));
     }
 }

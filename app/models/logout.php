@@ -1,9 +1,9 @@
 <?php
 
-namespace Lamantin\App\http\models;
+namespace Lamantin\App\models;
 
 use Lamantin\App\core\model;
-use Lamantin\App\http\models\tables\Users;
+use Lamantin\App\models\tables\Users;
 
 class logout extends model
 {

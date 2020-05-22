@@ -7,7 +7,6 @@ use Lamantin\App\http\controllers\login;
 use Lamantin\App\http\controllers\logout;
 use Lamantin\App\http\controllers\main;
 use Lamantin\App\http\controllers\register;
-use Lamantin\App\http\models\DataBase;
 use Phroute\Phroute\Dispatcher;
 use Phroute\Phroute\Exception\HttpMethodNotAllowedException;
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
@@ -18,24 +17,12 @@ class bootstrap
     private $router;
 
     // Controllers exemplars
-    private $main;
-    private $login;
-    private $register;
-    private $home;
-    private $logout;
-
     public function __construct()
     {
         $this->router = new RouteCollector();
-
-        $this->main = new main();
-        $this->login = new login();
-        $this->register = new register();
-        $this->home = new home();
-        $this->logout = new logout();
     }
 
-    public function init()
+    public function init(): void
     {
         $this->routes();
         $this->dispatch();
@@ -44,27 +31,27 @@ class bootstrap
     private function routes(): void
     {
         $this->router->get('/', function () {
-            return $this->main->mainPage();
+            return (new main())->mainPage();
         });
         $this->router->get('/login', function () {
-            return $this->login->loginPage();
+            return (new login())->loginPage();
         });
         $this->router->get('/register', function() {
-            return $this->register->registerPage();
+            return (new register())->registerPage();
         });
 
         $this->router->post('/Login', function() {
-            return $this->login->loginPost();
+            return (new login())->loginPost();
         });
         $this->router->post('/Register', function() {
-            return $this->register->registerPost();
+            return (new register())->registerPost();
         });
 
         $this->router->any('/home', function() {
-            return $this->home->homePage();
+            return (new home())->homePage();
         });
         $this->router->any('/logout', function() {
-            return $this->logout->logout();
+            return (new logout())->logout();
         });
     }
 
@@ -83,10 +70,5 @@ class bootstrap
         if (isset($response)) {
             echo $response;
         }
-    }
-
-    public function database()
-    {
-        return new DataBase();
     }
 }
