@@ -39,7 +39,7 @@ class Login extends model
      * @param string $email
      * @return int
      */
-    private function count(string $email): int
+    public function count(string $email): int
     {
         return Users::where('email', $email)->count();
     }

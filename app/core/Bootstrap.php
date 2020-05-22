@@ -60,7 +60,12 @@ class Bootstrap
             return (new Login())->loginPost();
         });
         $this->router->post('/Register', function() {
-            return (new Register())->registerPost();
+            return (new Register())->registerPost(
+                $_POST['name'],
+                $_POST['email'],
+                $_POST['password'],
+                $_POST['CSRF-TOKEN']
+            );
         });
 
         $this->router->any('/home', function() {

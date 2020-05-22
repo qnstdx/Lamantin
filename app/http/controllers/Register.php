@@ -22,15 +22,23 @@ class Register
     }
 
     /**
-     * @return void
+     * @param string $name
+     * @param string $email
+     * @param string $password
+     * @param string $token
      */
-    public function registerPost(): void
+    public function registerPost(
+        string $name,
+        string $email,
+        string $password,
+        string $token
+    ): void
     {
-        csrf::match($_POST['CSRF-TOKEN']);
+        csrf::match($token);
         (new \Lamantin\App\models\register())->register(
-            $_POST['name'],
-            $_POST['email'],
-            password_hash($_POST['password'], PASSWORD_DEFAULT)
+            $name,
+            $email,
+            password_hash($password, PASSWORD_DEFAULT)
         );
     }
 }
