@@ -14,5 +14,4 @@ if (getenv('APP_DEBUG') === 'true') {
     error_reporting(E_ALL);
 }
 
-$app = new bootstrap();
-$app->init();
+(new bootstrap())->init();

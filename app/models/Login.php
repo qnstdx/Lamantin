@@ -19,7 +19,7 @@ class Login extends model
      */
     public function login(string $email, string $password): bool
     {
-        if ($this->count($email) > 0 && $this->match($email, $password) === true) {
+        if ($this->findEmail($email) > 0 && $this->findPassword($password) === true) {
             $token = md5($email . $password . time());
 
             $tok = Users::where('email', '=', $email)->first();
@@ -39,19 +39,18 @@ class Login extends model
      * @param string $email
      * @return int
      */
-    public function count(string $email): int
+    public function findEmail(string $email): int
     {
         return Users::where('email', $email)->count();
     }
 
     /**
-     * @param string $email
      * @param string $password
      * @return bool
      */
-    private function match(string $email, string $password): bool
+    private function findPassword(string $password): bool
     {
-        $user = Users::where('email', $email)->get()->toArray();
+        $user = Users::where('password', $password)->get()->toArray();
 
         if (!empty($user)) {
             return password_verify($password, $user[0]['password']) === true;

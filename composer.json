@@ -15,7 +15,7 @@
     "vlucas/phpdotenv": "^4.1",
     "monolog/monolog": "^2.0",
     "phroute/phroute": "dev-master",
-    "illuminate/database": "5.1.8"
+    "illuminate/database": "5.1.8",
   },
   "autoload": {
     "psr-4": {
