@@ -21,14 +21,14 @@
   * ### Practice
     #### To create your page you need:
     * >Place your html file in **/public/views/**
-    * >Go to Bootstrap.php **(/app/core/Bootstrap.php)** and write in the ```initRoutes()``` method: 
+    * >Go to Bootstrap.php **(/app/core/Bootstrap.php)** and write in the ```routes()``` method: 
     ```php
     $this->router->any('/you_url', function(){
-        return (new YouControllerName())->actionYouName();
+        return (new YouControllerName())->youName();
     });
     ```
     
-    If you create new Controller **(/app/controllers/youControllerName.php)**, when write to the controller:
+    If you create new Controller **(/app/http/controllers/YouControllerName.php)**, when write to the controller:
     ```php
        namespace Lamantin\App\Http\Controllers;
        
@@ -36,7 +36,7 @@
        
        class YouControllerName
        {
-           //Action name which you wrote in Bootstrap.php ( return $this->youControllerName->actionName() )
+           //Action name which you wrote in Bootstrap.php ( return (new YouControllerName())->name() )
            public function youName()
            {
                // Render you html file which you place at /public/views/
