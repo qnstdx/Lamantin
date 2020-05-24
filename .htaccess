@@ -7,7 +7,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteRule ^(.*)$ index.php
 
-# Не индексирование каталогов.
+# No directory indexing.
 Options -Indexes
 
 # Кэширование статики.
@@ -15,7 +15,7 @@ Options -Indexes
     Header set Cache-Control "max-age=2592000"
 </FilesMatch>
 
-# Сжатие всех файлов.
+# Compression of all files.
 <IfModule mod_gzip.c>
     mod_gzip_on Yes
     mod_gzip_dechunk Yes
