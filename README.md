@@ -13,7 +13,7 @@
       ```shell script
         composer dump-autoload --optimize
       ```
-  * Clone Lanatin frontend **(https://github.com/jolydev24/lamantin-frontend.git)** and repack in / project
+  * Clone Lanatin frontend **(https://github.com/jolydev24/lamantin-frontend.git)** and repack in **'/'** project
   
 * # Work with Lamantin
   * ### bit of theory:
