@@ -27,6 +27,7 @@ class UserTest extends TestCase
      */
     public function setUp(): void
     {
+        // Create application
         $this->create();
 
         $this->email = 'testuser@gmail.com';

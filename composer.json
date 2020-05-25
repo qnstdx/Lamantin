@@ -16,6 +16,7 @@
     "monolog/monolog": "^2.0",
     "phroute/phroute": "dev-master",
     "illuminate/database": "5.1.8",
+    "robmorgan/phinx": "0.11.x-dev"
   },
   "autoload": {
     "psr-4": {
