@@ -76,9 +76,9 @@ class UserTest extends TestCase
      * Delete created test user.
      * @return void
      */
-     public function tearDown(): void
-     {
-         /** @phpstan-ignore-next-line */
-         Users::where('token', '=', $this->token)->delete();
-     }
+    public function tearDown(): void
+    {
+        /** @phpstan-ignore-next-line */
+        Users::where('token', '=', $this->token)->delete();
+    }
 }

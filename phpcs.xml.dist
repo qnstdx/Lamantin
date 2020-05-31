@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<rulest>
+    <rule ref="PSR12"/>
+    <file>app</file>
+    <file>tests</file>
+</rulest>

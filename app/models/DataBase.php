@@ -1,4 +1,5 @@
 <?php
+
 namespace Lamantin\App\models;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
@@ -18,12 +19,16 @@ class DataBase
     /**
      * DataBase constructor.
      */
-    private function __construct() {}
+    private function __construct()
+    {
+    }
 
     /**
      *
      */
-    private function __clone() {}
+    private function __clone()
+    {
+    }
 
     /**
      * @return void
@@ -31,7 +36,7 @@ class DataBase
     public static function getInstance(): void
     {
         if (is_null(self::$instance)) {
-           self::boot();
+            self::boot();
         }
     }
 
@@ -40,7 +45,7 @@ class DataBase
      */
     private static function boot(): void
     {
-        $capsule = new Capsule;
+        $capsule = new Capsule();
         $capsule->addConnection([
             'driver' => getenv('DB_DRIVER'),
             'host' => getenv('DB_HOST'),

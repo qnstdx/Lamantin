@@ -1,4 +1,5 @@
 <?php
+
 namespace Lamantin\App\models;
 
 use Lamantin\App\models\tables\Users;

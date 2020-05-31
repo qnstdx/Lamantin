@@ -52,17 +52,17 @@ class Bootstrap
         $this->router->get('/login', function () {
             (new Login())->loginPage();
         });
-        $this->router->get('/register', function() {
+        $this->router->get('/register', function () {
             (new Register())->registerPage();
         });
 
-        $this->router->post('/Login', function() {
+        $this->router->post('/Login', function () {
             (new Login())->loginPost(
                 $_POST['email'],
                 $_POST['password']
             );
         });
-        $this->router->post('/Register', function() {
+        $this->router->post('/Register', function () {
             (new Register())->registerPost(
                 $_POST['name'],
                 $_POST['email'],
@@ -71,10 +71,10 @@ class Bootstrap
             );
         });
 
-        $this->router->any('/home', function() {
+        $this->router->any('/home', function () {
             (new Home())->homePage();
         });
-        $this->router->any('/logout', function() {
+        $this->router->any('/logout', function () {
             (new Logout())->logout();
         });
     }
@@ -87,7 +87,10 @@ class Bootstrap
         $dispatcher = new Dispatcher($this->router->getData());
 
         try {
-            $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+            $response = $dispatcher->dispatch(
+                $_SERVER['REQUEST_METHOD'],
+                parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
+            );
         } catch (HttpRouteNotFoundException $e) {
             View::error('404');
         } catch (HttpMethodNotAllowedException $e) {

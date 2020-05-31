@@ -35,7 +35,7 @@ class View
      */
     public static function render(string $name, array $params = []): void
     {
-        if (!file_exists( getenv('APP_VIEWS_PATH') . $name . '.html.twig')) {
+        if (!file_exists(getenv('APP_VIEWS_PATH') . $name . '.html.twig')) {
             throw new Exception("View $name not found! path: " . getenv('APP_VIEWS_PATH') . $name . '.html.twig');
         } else {
             /** @phpstan-ignore-next-line */

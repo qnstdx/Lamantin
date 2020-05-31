@@ -15,7 +15,7 @@ class Csrf
     public static function get()
     {
         if (!isset($_SESSION['CSRF-TOKEN'])) {
-            return (new Csrf)->generate();
+            return (new Csrf())->generate();
         } else {
             return $_SESSION['CSRF-TOKEN'];
         }
@@ -39,7 +39,12 @@ class Csrf
      */
     private function generate(): string
     {
-        $_SESSION['CSRF-TOKEN'] = substr(str_shuffle("qwerrtyuiop[]asdfghjkl'zxcvbnm,./QWERTYUIOPASDFGHJKLZXCVBNM1234567890!@#$%^&*()_+-="), 0, 25);
+        $_SESSION['CSRF-TOKEN'] = substr(
+            str_shuffle("qwerrtyuiop[]asdfghjkl'zxcvbnm,./QWERTYUIOPASDFGHJKLZXCVBNM1234567890!@#$%^&*()_+-="),
+            0,
+            25
+        );
+
         return $_SESSION['CSRF-TOKEN'];
     }
 

@@ -29,10 +29,12 @@ class Login
     public function loginPost(string $email, string $password): void
     {
         Csrf::match($_POST['CSRF-TOKEN']);
-        if ((new \Lamantin\App\models\Login())->login(
-            $email,
-            $password
-        ) !== true) {
+        if (
+            (new \Lamantin\App\models\Login())->login(
+                $email,
+                $password
+            ) !== true
+        ) {
             echo 'Incorrect password or email!';
         }
     }

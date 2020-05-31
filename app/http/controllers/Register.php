@@ -32,8 +32,7 @@ class Register
         string $email,
         string $password,
         string $token
-    ): void
-    {
+    ): void {
         Csrf::match($token);
         (new \Lamantin\App\models\Register())->register(
             $name,
