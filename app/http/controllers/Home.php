@@ -2,7 +2,7 @@
 
 namespace Lamantin\App\http\controllers;
 
-use Lamantin\App\Core\View;
+use Lamantin\App\core\View;
 
 /**
  * Class Home
@@ -17,7 +17,7 @@ class Home
      */
     public function homePage(): void
     {
-        $model = new \Lamantin\App\models\home();
+        $model = new \Lamantin\App\models\Home();
         if ($model->auth() === true) {
             view::render('home', [
                 'data' => $model->get($_COOKIE['t'])[0]

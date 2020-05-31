@@ -2,7 +2,7 @@
 
 namespace Lamantin\App\models;
 
-use Lamantin\App\core\model;
+use Lamantin\App\core\Model;
 use Lamantin\App\models\tables\Users;
 
 /**
@@ -10,7 +10,7 @@ use Lamantin\App\models\tables\Users;
  * @package Lamantin\App\models
  * @author Jolydev <superduperproger@gmail.com>
  */
-class Login extends model
+class Login extends Model
 {
     /**
      * @param string $email
@@ -22,6 +22,7 @@ class Login extends model
         if ($this->findEmail($email) > 0 && $this->findPassword($password) === true) {
             $token = md5($email . $password . time());
 
+            /** @phpstan-ignore-next-line */
             $tok = Users::where('email', '=', $email)->first();
             $tok->token = $token;
             $tok->save();
@@ -41,6 +42,7 @@ class Login extends model
      */
     public function findEmail(string $email): int
     {
+        /** @phpstan-ignore-next-line */
         return Users::where('email', $email)->count();
     }
 
@@ -50,6 +52,7 @@ class Login extends model
      */
     private function findPassword(string $password): bool
     {
+        /** @phpstan-ignore-next-line */
         $user = Users::where('password', $password)->get()->toArray();
 
         if (!empty($user)) {

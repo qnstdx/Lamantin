@@ -2,11 +2,11 @@
 
 namespace Lamantin\App\core;
 
-use Lamantin\App\http\controllers\home;
-use Lamantin\App\http\controllers\login;
-use Lamantin\App\http\controllers\logout;
-use Lamantin\App\http\controllers\main;
-use Lamantin\App\http\controllers\register;
+use Lamantin\App\http\controllers\Home;
+use Lamantin\App\http\controllers\Login;
+use Lamantin\App\http\controllers\Logout;
+use Lamantin\App\http\controllers\Main;
+use Lamantin\App\http\controllers\Register;
 use Phroute\Phroute\Dispatcher;
 use Phroute\Phroute\Exception\HttpMethodNotAllowedException;
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
@@ -47,32 +47,35 @@ class Bootstrap
     private function routes(): void
     {
         $this->router->get('/', function () {
-            return (new Main())->mainPage();
+            (new Main())->mainPage();
         });
         $this->router->get('/login', function () {
-            return (new Login())->loginPage();
+            (new Login())->loginPage();
         });
         $this->router->get('/register', function() {
-            return (new Register())->registerPage();
+            (new Register())->registerPage();
         });
 
         $this->router->post('/Login', function() {
-            return (new Login())->loginPost();
+            (new Login())->loginPost(
+                $_POST['email'],
+                $_POST['password']
+            );
         });
         $this->router->post('/Register', function() {
-            return (new Register())->registerPost(
+            (new Register())->registerPost(
                 $_POST['name'],
                 $_POST['email'],
-                $_POST['password'],
+                (string) $_POST['password'],
                 $_POST['CSRF-TOKEN']
             );
         });
 
         $this->router->any('/home', function() {
-            return (new Home())->homePage();
+            (new Home())->homePage();
         });
         $this->router->any('/logout', function() {
-            return (new Logout())->logout();
+            (new Logout())->logout();
         });
     }
 

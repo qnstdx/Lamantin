@@ -2,8 +2,8 @@
 
 namespace Lamantin\App\http\controllers;
 
-use Lamantin\App\components\csrf;
-use Lamantin\App\core\view;
+use Lamantin\App\components\Csrf;
+use Lamantin\App\core\View;
 
 /**
  * Class Login
@@ -22,15 +22,17 @@ class Login
     }
 
     /**
+     * @param string $email
+     * @param string $password
      * @return void
      */
-    public function loginPost(): void
+    public function loginPost(string $email, string $password): void
     {
         Csrf::match($_POST['CSRF-TOKEN']);
-        if ((new \Lamantin\App\models\login())->login(
-            $_POST['email'],
-            $_POST['password']) !== true
-        ) {
+        if ((new \Lamantin\App\models\Login())->login(
+            $email,
+            $password
+        ) !== true) {
             echo 'Incorrect password or email!';
         }
     }

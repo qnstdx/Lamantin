@@ -3,8 +3,8 @@
 namespace Lamantin\App\core;
 
 use Exception;
-use Lamantin\App\Components\csrf;
-use Lamantin\App\Models\home;
+use Lamantin\App\components\Csrf;
+use Lamantin\App\models\Home;
 use Twig\Environment;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -24,7 +24,7 @@ class View
      */
     public static function error(string $name): void
     {
-        require_once(ROOT . '/public/temps/' . $name . '.html.twig');
+        require_once "/public/temps/$name.html.twig";
     }
 
     /**
@@ -35,11 +35,12 @@ class View
      */
     public static function render(string $name, array $params = []): void
     {
-        if (!file_exists(ROOT . getenv('APP_VIEWS_PATH') . $name . '.html.twig')) {
-            throw new Exception("View $name not found! path: " . ROOT . getenv('APP_VIEWS_PATH') . $name . '.html.twig');
+        if (!file_exists( getenv('APP_VIEWS_PATH') . $name . '.html.twig')) {
+            throw new Exception("View $name not found! path: " . getenv('APP_VIEWS_PATH') . $name . '.html.twig');
         } else {
-            $loader = new FilesystemLoader(ROOT . getenv('APP_VIEWS_PATH'));
-            if (getenv('APP_CACHCE') === true) {
+            /** @phpstan-ignore-next-line */
+            $loader = new FilesystemLoader(getenv('APP_VIEWS_PATH'));
+            if (getenv('APP_CACHE') === 'true') {
                 $twig = new Environment($loader, [
                     'cache' => getenv('APP_TWIG_CACHE_P'),
                 ]);

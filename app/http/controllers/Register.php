@@ -2,8 +2,8 @@
 
 namespace Lamantin\App\http\controllers;
 
-use Lamantin\App\components\csrf;
-use Lamantin\App\core\view;
+use Lamantin\App\components\Csrf;
+use Lamantin\App\core\View;
 
 /**
  * Class Register
@@ -18,7 +18,7 @@ class Register
      */
     public function registerPage(): void
     {
-        view::render('register');
+        View::render('register');
     }
 
     /**
@@ -34,11 +34,11 @@ class Register
         string $token
     ): void
     {
-        csrf::match($token);
-        (new \Lamantin\App\models\register())->register(
+        Csrf::match($token);
+        (new \Lamantin\App\models\Register())->register(
             $name,
             $email,
-            password_hash($password, PASSWORD_DEFAULT)
+            (string) password_hash($password, PASSWORD_DEFAULT)
         );
     }
 }

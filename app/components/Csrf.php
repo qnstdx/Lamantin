@@ -10,14 +10,6 @@ namespace Lamantin\App\components;
 class Csrf
 {
     /**
-     * Csrf constructor.
-     */
-    public function __construct()
-    {
-        session_start();
-    }
-
-    /**
      * @return false|mixed|string
      */
     public static function get()
@@ -31,10 +23,11 @@ class Csrf
 
     /**
      * @param string $tokenForm
+     * @return void
      */
-    public static function match(string $tokenForm)
+    public static function match(string $tokenForm): void
     {
-        if (!isset($tokenForm) && $tokenForm !== $_SESSION['CSRF-TOKEN']) {
+        if ($tokenForm !== $_SESSION['CSRF-TOKEN']) {
             exit("#400 BAD REQUEST!");
         } else {
             (new Csrf())->delete();
@@ -42,11 +35,12 @@ class Csrf
     }
 
     /**
-     * @return false|string
+     * @return string
      */
-    private function generate()
+    private function generate(): string
     {
-        return $_SESSION['CSRF-TOKEN'] = substr(str_shuffle("qwerrtyuiop[]asdfghjkl'zxcvbnm,./QWERTYUIOPASDFGHJKLZXCVBNM1234567890!@#$%^&*()_+-="), 0, 25);
+        $_SESSION['CSRF-TOKEN'] = substr(str_shuffle("qwerrtyuiop[]asdfghjkl'zxcvbnm,./QWERTYUIOPASDFGHJKLZXCVBNM1234567890!@#$%^&*()_+-="), 0, 25);
+        return $_SESSION['CSRF-TOKEN'];
     }
 
     /**

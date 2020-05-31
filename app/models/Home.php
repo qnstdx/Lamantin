@@ -19,11 +19,12 @@ class Home
     }
 
     /**
-     * @param $token
+     * @param string $token
      * @return array
      */
-    public function get($token): array
+    public function get(string $token): array
     {
+        /** @phpstan-ignore-next-line */
         return Users::where('token', $token)->get()->toArray();
     }
 }

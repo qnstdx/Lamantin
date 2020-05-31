@@ -9,15 +9,25 @@ use PHPUnit\Framework\TestCase;
 /**
  * Class ExampleTest
  * @package Unit
+ * @author Jolydev <superduperproger@gmail.com>
  */
 class UserTest extends TestCase
 {
     use CreateApplication;
 
+    /**
+     * @var string
+     */
     private $email;
 
+    /**
+     * @var false|string|null
+     */
     private $password;
 
+    /**
+     * @var string
+     */
     private $token;
 
     /**
@@ -41,6 +51,7 @@ class UserTest extends TestCase
             'password' => $this->password
         ]);
 
+        /** @phpstan-ignore-next-line */
         $user = Users::where('token', $this->email)->get()->toArray();
         $this->assertEmpty($user);
     }
@@ -51,6 +62,7 @@ class UserTest extends TestCase
      */
     public function testUserData(): void
     {
+        /** @phpstan-ignore-next-line */
         $user = Users::where('email', '=', $this->email)->first();
 
         $this->assertNotEmpty($user);
@@ -66,6 +78,7 @@ class UserTest extends TestCase
      */
      public function tearDown(): void
      {
+         /** @phpstan-ignore-next-line */
          Users::where('token', '=', $this->token)->delete();
      }
 }

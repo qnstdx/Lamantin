@@ -3,28 +3,42 @@ namespace Lamantin\App\models;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
+/**
+ * Class DataBase
+ * @package Lamantin\App\models
+ * @author Jolydev <superduperproger@gmail.com>
+ */
 class DataBase
 {
+    /**
+     * @var null
+     */
     private static $instance = null;
 
+    /**
+     * DataBase constructor.
+     */
     private function __construct() {}
 
+    /**
+     *
+     */
     private function __clone() {}
 
-    private function __sleep() {}
-
-    private function __wakeup() {}
-
-    public static function getInstance()
+    /**
+     * @return void
+     */
+    public static function getInstance(): void
     {
         if (is_null(self::$instance)) {
            self::boot();
         }
-
-        return self::$instance;
     }
 
-    private static function boot()
+    /**
+     * @return void
+     */
+    private static function boot(): void
     {
         $capsule = new Capsule;
         $capsule->addConnection([

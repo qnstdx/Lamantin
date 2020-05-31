@@ -2,7 +2,7 @@
 
 namespace Lamantin\App\models;
 
-use Lamantin\App\core\model;
+use Lamantin\App\core\Model;
 use Lamantin\App\models\tables\Users;
 
 /**
@@ -10,7 +10,7 @@ use Lamantin\App\models\tables\Users;
  * @package Lamantin\App\models
  * @author Jolydev <superduperproger@gmail.com>
  */
-class Logout extends model
+class Logout extends Model
 {
     /**
      * @param string $token
@@ -18,6 +18,7 @@ class Logout extends model
      */
     public function update(string $token): void
     {
+        /** @phpstan-ignore-next-line */
         $tok = Users::where('token', '=', $token)->first();
         $tok->token = '';
         $tok->save();

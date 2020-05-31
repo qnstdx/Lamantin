@@ -2,7 +2,7 @@
 
 namespace Lamantin\App\http\controllers;
 
-use Lamantin\App\core\view;
+use Lamantin\App\core\View;
 
 /**
  * Class Main
@@ -17,7 +17,7 @@ class Main
      */
     public function mainPage(): void
     {
-        view::render('main', [
+        View::render('main', [
             'name' => 'Nikita'
         ]);
     }
