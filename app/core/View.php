@@ -4,6 +4,7 @@ namespace Lamantin\App\core;
 
 use Exception;
 use Lamantin\App\components\Csrf;
+use Lamantin\App\components\Vroot;
 use Lamantin\App\models\Home;
 use Twig\Environment;
 use Twig\Error\LoaderError;
@@ -14,7 +15,7 @@ use Twig\Loader\FilesystemLoader;
 /**
  * Class View
  * @package Lamantin\App\core
- * @author Jolydev <superduperproger@gmail.com>
+ * @author qnstdx
  */
 class View
 {
@@ -74,8 +75,12 @@ class View
         $auth = new \Twig\TwigFunction('auth', function () {
             return (new Home())->auth();
         });
+        $root = new \Twig\TwigFunction('root', function () {
+            return (new Vroot())->get();
+        });
 
         $twig->addFunction($csrf);
         $twig->addFunction($auth);
+        $twig->addFunction($root);
     }
 }

@@ -5,7 +5,7 @@ namespace Lamantin\App\http\controllers;
 /**
  * Class Logout
  * @package Lamantin\App\http\controllers
- * @author Jolydev <superduperproger@gmail.com>
+ * @author qnstdx
  */
 class Logout
 {

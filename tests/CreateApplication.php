@@ -7,7 +7,7 @@ use Dotenv\Dotenv;
 /**
  * Trait CreateApplication
  * @package Lamantin\Tests
- * @author Jolydev <superduperproger@gmail.com>
+ * @author qnstdx
  */
 trait CreateApplication
 {

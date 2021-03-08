@@ -7,7 +7,7 @@ use Lamantin\App\core\View;
 /**
  * Class Home
  * @package Lamantin\App\http\controllers
- * @author Jolydev <superduperproger@gmail.com>
+ * @author qnstdx
  */
 class Home
 {

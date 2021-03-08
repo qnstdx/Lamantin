@@ -7,7 +7,7 @@ use Lamantin\App\models\tables\Users;
 /**
  * Class Register
  * @package Lamantin\App\models
- * @author Jolydev <superduperproger@gmail.com>
+ * @author qnstdx
  */
 class Register
 {

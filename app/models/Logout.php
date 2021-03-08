@@ -8,7 +8,7 @@ use Lamantin\App\models\tables\Users;
 /**
  * Class Logout
  * @package Lamantin\App\models
- * @author Jolydev <superduperproger@gmail.com>
+ * @author qnstdx
  */
 class Logout extends Model
 {

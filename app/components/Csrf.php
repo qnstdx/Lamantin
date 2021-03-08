@@ -5,7 +5,7 @@ namespace Lamantin\App\components;
 /**
  * Class Csrf
  * @package Lamantin\App\components
- * @author Jolydev <superduperproger@gmail.com>
+ * @author qnstdx
  */
 class Csrf
 {

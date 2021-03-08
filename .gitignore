@@ -1,5 +1,4 @@
 .idea
 vendor
-/public/views/cache
+public/public/views/cache
 composer.lock
-public

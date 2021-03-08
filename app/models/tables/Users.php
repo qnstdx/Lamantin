@@ -8,7 +8,7 @@ use Lamantin\App\models\DataBase;
 /**
  * Class Users
  * @package Lamantin\App\models\tables
- * @author Jolydev <superduperproger@gmail.com>
+ * @author qnstdx
  */
 class Users extends Model
 {

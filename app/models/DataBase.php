@@ -7,7 +7,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 /**
  * Class DataBase
  * @package Lamantin\App\models
- * @author Jolydev <superduperproger@gmail.com>
+ * @author qnstdx
  */
 class DataBase
 {

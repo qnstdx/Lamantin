@@ -15,7 +15,7 @@ use Phroute\Phroute\RouteCollector;
 /**
  * Class Bootstrap
  * @package Lamantin\App\core
- * @author Jolydev <superduperproger@gmail.com>
+ * @author qnstdx
  */
 class Bootstrap
 {
