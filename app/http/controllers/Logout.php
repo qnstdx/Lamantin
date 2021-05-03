@@ -18,6 +18,6 @@ class Logout
 
         /** @phpstan-ignore-next-line */
         setcookie('t', null, -(time() + 1296000));
-        header('Location: /');
+        redirect('/');
     }
 }

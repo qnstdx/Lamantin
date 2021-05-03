@@ -12,14 +12,6 @@ use Lamantin\App\models\tables\Users;
 class Home
 {
     /**
-     * @return bool
-     */
-    public function auth(): bool
-    {
-        return isset($_COOKIE['t']) === true;
-    }
-
-    /**
      * @param string $token
      * @return array
      */

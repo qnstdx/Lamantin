@@ -25,7 +25,7 @@ class View
      */
     public static function error(string $name): void
     {
-        require_once "/public/temps/$name.html.twig";
+        require_once ROOT . "/public/temps/$name.html.twig";
     }
 
     /**
@@ -73,7 +73,7 @@ class View
             return (new Csrf())->get();
         });
         $auth = new \Twig\TwigFunction('auth', function () {
-            return (new Home())->auth();
+            return isAuth();
         });
         $root = new \Twig\TwigFunction('root', function () {
             return (new Vroot())->get();

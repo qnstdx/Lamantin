@@ -18,12 +18,12 @@ class Home
     public function homePage(): void
     {
         $model = new \Lamantin\App\models\Home();
-        if ($model->auth() === true) {
+        if (isAuth()) {
             view::render('home', [
                 'data' => $model->get($_COOKIE['t'])[0]
             ]);
         } else {
-            header('Location: /');
+            redirect('/');
         }
     }
 }

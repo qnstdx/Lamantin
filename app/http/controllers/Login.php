@@ -35,7 +35,7 @@ class Login
                 $password
             ) !== true
         ) {
-            echo 'Incorrect password or email!';
+           panic('Incorrect password or email!');
         }
     }
 }

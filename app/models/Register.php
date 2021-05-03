@@ -20,6 +20,7 @@ class Register
     public function register(string $username, string $email, string $password): void
     {
         $token = md5($email . $password . time());
+
         Users::create([
             'username' => $username,
             'token' => $token,
@@ -28,6 +29,6 @@ class Register
         ]);
         
         setcookie('t', $token, time() + 1296000);
-        header('Location: /home');
+        redirect('/home');
     }
 }

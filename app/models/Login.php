@@ -19,7 +19,7 @@ class Login extends Model
      */
     public function login(string $email, string $password): bool
     {
-        if ($this->findEmail($email) > 0 && $this->findPassword($password) === true) {
+        if ($this->confirmData($password, $email)) {
             $token = md5($email . $password . time());
 
             /** @phpstan-ignore-next-line */
@@ -28,7 +28,7 @@ class Login extends Model
             $tok->save();
 
             setcookie('t', $token, time() + 1296000);
-            header('Location: /home');
+            redirect('/home');
 
             return true;
         } else {
@@ -48,15 +48,18 @@ class Login extends Model
 
     /**
      * @param string $password
+     * @param string $email
      * @return bool
      */
-    private function findPassword(string $password): bool
+    private function confirmData(string $password, string $email): bool
     {
-        /** @phpstan-ignore-next-line */
-        $user = Users::where('password', $password)->get()->toArray();
-
-        if (!empty($user)) {
-            return password_verify($password, $user[0]['password']) === true;
+        if (
+            /** @phpstan-ignore-next-line */
+            password_verify($password, Users::where('email', '=', $email)->first()->password)
+            &&
+            $this->findEmail($email) > 0
+        ) {
+            return true;
         } else {
             return false;
         }

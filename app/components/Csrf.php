@@ -28,7 +28,7 @@ class Csrf
     public static function match(string $tokenForm): void
     {
         if ($tokenForm !== $_SESSION['CSRF-TOKEN']) {
-            exit("#400 BAD REQUEST!");
+            panic("#400 BAD REQUEST!");
         } else {
             (new Csrf())->delete();
         }

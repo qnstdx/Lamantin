@@ -46,6 +46,7 @@ class DataBase
     private static function boot(): void
     {
         $capsule = new Capsule();
+
         $capsule->addConnection([
             'driver' => getenv('DB_DRIVER'),
             'host' => getenv('DB_HOST'),
@@ -56,6 +57,7 @@ class DataBase
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
         ]);
+
         $capsule->bootEloquent();
     }
 }
