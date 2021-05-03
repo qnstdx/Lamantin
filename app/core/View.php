@@ -25,7 +25,7 @@ class View
      */
     public static function error(string $name): void
     {
-        require_once ROOT . "/public/temps/$name.html.twig";
+        require_once ROOT . "/public/public/temps/$name.html.twig";
     }
 
     /**
