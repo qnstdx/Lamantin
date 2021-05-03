@@ -4,7 +4,7 @@
 # DOCS:
 * # Instalation
   * ```shell script 
-    git clone https://github.com/jolydev24/Lamantin.git
+    git clone https://github.com/qnstdx/Lamantin.git
   * At the root of the project folder: 
     ```shell script
       composer install --ignore-platform-reqs
@@ -13,7 +13,7 @@
       ```shell script
         composer dump-autoload --optimize
       ```
-  * Clone Lamatin frontend **(https://github.com/jolydev24/lamantin-frontend.git)** and repack in **'/'** project
+  * Clone Lamatin frontend **(https://github.com/qnstdx/lamantin-frontend.git)** and repack in **'/'** project
   
 * # Work with Lamantin
   * ### bit of theory:
@@ -23,7 +23,7 @@
     * >Place your html file in **/public/views/**
     * >Go to Bootstrap.php **(/app/core/Bootstrap.php)** and write in the ```routes()``` method: 
     ```php
-    $this->router->any('/you_url', function(){
+    $this->router->any('/you_url', function() {
         return (new YouControllerName())->youName();
     });
     ```
